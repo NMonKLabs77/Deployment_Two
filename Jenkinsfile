@@ -36,19 +36,6 @@ pipeline {
                 zip dir: env.ZIP_SOURCE_DIR, exclude: '', glob: '', zipFile: env.ZIP_OUTFILE, overwrite: true
             }
         }
-        stage ('Extract zip file') {
-            steps{
-                sh '''#!/bin/bash
-                file_path=/ZIP_SOURCE_DIR/ZIP_OUTFILE
-                extract=~/zip_folder
-                mkdir -p "$extract"
-                sudo apt-get install unzip
-                unzip "$file_path" -d "$extract"
-                scp -i ~/.ssh/authorized_keys ubuntu@54.165.214.61:~/zip_folder* ~/Desktop/zippy
-                '''
-                }
-            }
-        }
     }
-
+}
 
