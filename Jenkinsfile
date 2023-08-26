@@ -44,7 +44,8 @@ pipeline {
                 mkdir -p "$extract"
                 sudo apt-get install unzip
                 unzip "$file_path" -d "$extract"
-                scp -i ~/.ssh/authorized_keys ubuntu@54.165.214.61:~/zip_folder* ~/Desktop/zippy   
+                scp -i ~/.ssh/authorized_keys ubuntu@54.165.214.61:~/zip_folder* ~/Desktop/zippy
+                '''
                 }
             }
         }
